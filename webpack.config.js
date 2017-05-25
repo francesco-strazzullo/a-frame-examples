@@ -21,5 +21,9 @@ module.exports = {
   plugins: [new HtmlWebpackPlugin({
     template: 'index.html',
     inject: 'head'
-  })]
+  })],
+  devServer: {
+    host: '0.0.0.0',
+    disableHostCheck: true
+  }
 }
