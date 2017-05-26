@@ -1,23 +1,24 @@
 import AFRAME from 'aframe'
 
 AFRAME.registerComponent('move-around', {
+  schema: {
+    moveX: {type: 'boolean'},
+    moveY: {type: 'boolean'},
+    moveZ: {type: 'boolean'}
+  },
   init: function () {
-    let counter = 0
+    this.counter = 0
+    this.originalPosition = this.el.getAttribute('position')
+  },
+  tick: function (time, timeDelta) {
+    this.counter += (0.002 * timeDelta)
 
-    let {x, y, z} = this.el.getAttribute('position')
+    let {x, y, z} = this.originalPosition
 
-    const step = () => {
-      counter += 0.05
+    let newX = this.data.moveX ? x * Math.cos(this.counter) : x
+    let newY = this.data.moveY ? y * Math.cos(this.counter) : y
+    let newZ = this.data.moveZ ? z * Math.cos(this.counter) : z
 
-      let newX = x * Math.cos(counter)
-      let newY = y
-      let newZ = z * Math.sin(counter)
-
-      this.el.setAttribute('position', { x: newX, y: newY, z: newZ })
-
-      window.requestAnimationFrame(step)
-    }
-
-    window.requestAnimationFrame(step)
+    this.el.setAttribute('position', { x: newX, y: newY, z: newZ })
   }
 })

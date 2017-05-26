@@ -3,9 +3,9 @@
 <body>
   <a-scene>
     <a-light id="light" type="directional" color="white" intensity="2" position="-10 5 2"></a-light>
-    <a-box move-around color="#CDCC00" width="1" height="1" position="1 2 -5"></a-box>
-    <a-box move-around color="white" width="1" height="1" position="5 0.5 -1"></a-box>
-    <a-box move-around color="red" width="1" height="1" position="10 3 10"></a-box>
+    <a-box move-around="move-x: true; move-y: true; move-z: true" color="#CDCC00" width="1" height="1" position="1 2 -5"></a-box>
+    <a-box move-around="move-x: true" color="white" width="1" height="1" position="5 0.5 -1"></a-box>
+    <a-box move-around="move-z: true" color="red" width="1" height="1" position="10 3 10"></a-box>
     <a-sky id="sky" color="#009DCD"></a-sky>
   </a-scene>
 </body>
