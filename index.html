@@ -2,11 +2,13 @@
 
 <body>
   <a-scene>
-    <a-light id="light" type="directional" color="white" intensity="2" position="-10 5 2"></a-light>
-    <a-box move-around="move-x: true; move-y: true; move-z: true" color="#CDCC00" width="1" height="1" position="1 2 -5"></a-box>
-    <a-box move-around="move-x: true" color="white" width="1" height="1" position="5 0.5 -1"></a-box>
-    <a-box move-around="move-z: true" color="red" width="1" height="1" position="10 3 10"></a-box>
+    <a-assets>
+      <a-asset-item id="lego-model" src="assets/lego.obj"></a-asset-item>
+      <img id="logo" src="assets/logo.jpg">
+    </a-assets>
+    <a-box move-around="move-x: true" material="src: #logo" width="1" height="1" position="1 2 -5"></a-box>
     <a-sky id="sky" color="#009DCD"></a-sky>
+    <a-obj-model src="#lego-model" material="color: #CDCC00" position="-1 1.5 -1" scale="0.01 0.01 0.01"><a-obj-model>
   </a-scene>
 </body>
 
