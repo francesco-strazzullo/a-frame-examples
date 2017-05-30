@@ -2,13 +2,9 @@
 
 <body>
   <a-scene>
-    <a-assets>
-      <a-asset-item id="lego-model" src="assets/lego.obj"></a-asset-item>
-      <img id="logo" src="assets/logo.jpg">
-    </a-assets>
-    <a-box move-around="move-x: true" material="src: #logo" width="1" height="1" position="1 2 -5"></a-box>
-    <a-sky id="sky" color="#009DCD"></a-sky>
-    <a-obj-model src="#lego-model" material="color: #CDCC00" position="-1 1.5 -1" scale="0.01 0.01 0.01"><a-obj-model>
+    <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#0080AF"></a-plane>
+    <a-sphere position="2 1 -5" radius="1" color="#CDCC00"></a-sphere>
+    <a-box position="-2 1 -5" width="2" height="2" color="#CDCC00"></a-sphere>
   </a-scene>
 </body>
 

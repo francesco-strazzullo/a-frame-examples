@@ -2,9 +2,9 @@ import AFRAME from 'aframe'
 
 AFRAME.registerComponent('move-around', {
   schema: {
-    moveX: {type: 'boolean'},
-    moveY: {type: 'boolean'},
-    moveZ: {type: 'boolean'}
+    moveX: {type: 'number', default: 0},
+    moveY: {type: 'number', default: 0},
+    moveZ: {type: 'number', default: 0}
   },
   init: function () {
     this.counter = 0
@@ -15,9 +15,9 @@ AFRAME.registerComponent('move-around', {
 
     let {x, y, z} = this.originalPosition
 
-    let newX = this.data.moveX ? x * Math.cos(this.counter) : x
-    let newY = this.data.moveY ? y * Math.cos(this.counter) : y
-    let newZ = this.data.moveZ ? z * Math.cos(this.counter) : z
+    let newX = x + this.data.moveX * Math.cos(this.counter)
+    let newY = y + this.data.moveY * Math.cos(this.counter)
+    let newZ = z + this.data.moveZ * Math.cos(this.counter)
 
     this.el.setAttribute('position', { x: newX, y: newY, z: newZ })
   }
