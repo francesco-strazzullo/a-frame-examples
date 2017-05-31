@@ -3,20 +3,20 @@
 <body>
   <a-scene>
     <a-assets>
-      <img id="strazzullo" src="assets/francesco-strazzullo.jpg">
-      <img id="violini" src="assets/alessandro-violini.jpg">
-      <img id="dellava" src="assets/antonio-dell-ava.jpg">
-      <img id="dluconi" src="assets/daniele-luconi.jpg">
-      <img id="massacci" src="assets/lorenzo-massacci.jpg">
-      <img id="pomili" src="assets/lorenzo-pomili.jpg">
-      <img id="deluca" src="assets/mattia-ex.jpg">
-      <img id="focanti" src="assets/michele-focanti.jpg">
-      <img id="mluconi" src="assets/michele-luconi.jpg">
-      <img id="vesprini" src="assets/ramona-vesprini.jpg">
-      <img id="tosi" src="assets/severio-ex02.jpg">
-      <img id="morresi" src="assets/silvia-morresi.jpg">
-      <img id="ceccacci" src="assets/stefania-ceccacci.jpg">
-      <img id="mandolini" src="assets/giorgio-mandolini.jpg">
+      <img crossorigin="anonymous" id="strazzullo" src="assets/francesco-strazzullo.jpg">
+      <img crossorigin="anonymous" id="violini" src="assets/alessandro-violini.jpg">
+      <img crossorigin="anonymous" id="dellava" src="assets/antonio-dell-ava.jpg">
+      <img crossorigin="anonymous" id="dluconi" src="assets/daniele-luconi.jpg">
+      <img crossorigin="anonymous" id="massacci" src="assets/lorenzo-massacci.jpg">
+      <img crossorigin="anonymous" id="pomili" src="assets/lorenzo-pomili.jpg">
+      <img crossorigin="anonymous" id="deluca" src="assets/mattia-ex.jpg">
+      <img crossorigin="anonymous" id="focanti" src="assets/michele-focanti.jpg">
+      <img crossorigin="anonymous" id="mluconi" src="assets/michele-luconi.jpg">
+      <img crossorigin="anonymous" id="vesprini" src="assets/ramona-vesprini.jpg">
+      <img crossorigin="anonymous" id="tosi" src="assets/severio-ex02.jpg">
+      <img crossorigin="anonymous" id="morresi" src="assets/silvia-morresi.jpg">
+      <img crossorigin="anonymous" id="ceccacci" src="assets/stefania-ceccacci.jpg">
+      <img crossorigin="anonymous" id="mandolini" src="assets/giorgio-mandolini.jpg">
     </a-assets>
     <a-sky color="#0080AF"></a-sky>
     <a-plane exer="violini"></a-plane>
@@ -33,9 +33,13 @@
     <a-plane exer="morresi"></a-plane>
     <a-plane exer="ceccacci"></a-plane>
     <a-plane exer="mandolini"></a-plane>
-     <a-entity camera look-controls>
-        <a-cursor fuse="true" raycaster="objects: [exer]"></a-cursor>
-      </a-entity>
+    <a-entity camera look-controls>
+      <a-cursor fuse="true" raycaster="objects: [exer]"></a-cursor>
+    </a-entity>
+    <a-text role="message" text="align: center; width: 20; value: Look at one of the exer" position="0 -2 -4"></a-text>
+    <a-text role="message" text="align: center; width: 20; value: Look at one of the exer" position="0 5 -4"></a-text>
+    <a-text role="message" text="align: center; width: 20; value: Look at one of the exer" position="10 1.5 -4"></a-text>
+    <a-text role="message" text="align: center; width: 20; value: Look at one of the exer" position="-10 1.5 -4"></a-text>
   </a-scene>
 </body>
 
