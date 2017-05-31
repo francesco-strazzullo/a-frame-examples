@@ -79569,26 +79569,58 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_aframe___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_aframe__);
 
 
-__WEBPACK_IMPORTED_MODULE_0_aframe___default.a.registerComponent('move-around', {
-  schema: {
-    moveX: { type: 'boolean' },
-    moveY: { type: 'boolean' },
-    moveZ: { type: 'boolean' }
-  },
+const CODING_TOS = {
+  violini: 'work out',
+  strazzullo: 'enjoy',
+  dellava: 'create',
+  dluconi: 'rock',
+  mluconi: 'disrupt',
+  mandolini: 'make',
+  massacci: 'build',
+  focanti: 'feel good',
+  deluca: 'interface',
+  tosi: 'discover',
+  morresi: 'evolve',
+  ceccacci: 'improve',
+  pomili: 'math',
+  vesprini: 'design'
+};
+
+const START_X = -4;
+const START_Y = 3;
+const Z = -4;
+const WIDTH = 1;
+const SPACING = 0.5;
+const ELEMENTS_IN_A_ROW = 6;
+
+let index = 0;
+
+const onExerClick = exer => {
+  const codingTo = `coding to ${CODING_TOS[exer]}`;
+
+  document.querySelectorAll('[role="message"]').forEach(message => {
+    const textAttribute = message.getAttribute('text');
+    const newTextAttribute = Object.assign({}, textAttribute, { value: codingTo });
+    message.setAttribute('text', newTextAttribute);
+  });
+};
+
+__WEBPACK_IMPORTED_MODULE_0_aframe___default.a.registerComponent('exer', {
+  schema: { type: 'string' },
   init: function () {
-    this.counter = 0;
-    this.originalPosition = this.el.getAttribute('position');
-  },
-  tick: function (time, timeDelta) {
-    this.counter += 0.002 * timeDelta;
+    const x = START_X + (WIDTH + SPACING) * (index % ELEMENTS_IN_A_ROW);
+    const y = START_Y - (WIDTH + SPACING) * Math.floor(index / ELEMENTS_IN_A_ROW);
 
-    let { x, y, z } = this.originalPosition;
+    this.el.setAttribute('position', { x, y, z: Z });
+    this.el.setAttribute('width', WIDTH);
+    this.el.setAttribute('height', WIDTH);
+    this.el.setAttribute('material', { src: `#${this.data}` });
 
-    let newX = this.data.moveX ? x * Math.cos(this.counter) : x;
-    let newY = this.data.moveY ? y * Math.cos(this.counter) : y;
-    let newZ = this.data.moveZ ? z * Math.cos(this.counter) : z;
+    this.el.addEventListener('click', () => {
+      onExerClick(this.data);
+    });
 
-    this.el.setAttribute('position', { x: newX, y: newY, z: newZ });
+    index++;
   }
 });
 

@@ -3,12 +3,43 @@
 <body>
   <a-scene>
     <a-assets>
-      <a-asset-item id="lego-model" src="assets/lego.obj"></a-asset-item>
-      <img id="logo" src="assets/logo.jpg">
+      <img crossorigin="anonymous" id="strazzullo" src="assets/francesco-strazzullo.jpg">
+      <img crossorigin="anonymous" id="violini" src="assets/alessandro-violini.jpg">
+      <img crossorigin="anonymous" id="dellava" src="assets/antonio-dell-ava.jpg">
+      <img crossorigin="anonymous" id="dluconi" src="assets/daniele-luconi.jpg">
+      <img crossorigin="anonymous" id="massacci" src="assets/lorenzo-massacci.jpg">
+      <img crossorigin="anonymous" id="pomili" src="assets/lorenzo-pomili.jpg">
+      <img crossorigin="anonymous" id="deluca" src="assets/mattia-ex.jpg">
+      <img crossorigin="anonymous" id="focanti" src="assets/michele-focanti.jpg">
+      <img crossorigin="anonymous" id="mluconi" src="assets/michele-luconi.jpg">
+      <img crossorigin="anonymous" id="vesprini" src="assets/ramona-vesprini.jpg">
+      <img crossorigin="anonymous" id="tosi" src="assets/severio-ex02.jpg">
+      <img crossorigin="anonymous" id="morresi" src="assets/silvia-morresi.jpg">
+      <img crossorigin="anonymous" id="ceccacci" src="assets/stefania-ceccacci.jpg">
+      <img crossorigin="anonymous" id="mandolini" src="assets/giorgio-mandolini.jpg">
     </a-assets>
-    <a-box move-around="move-x: true" material="src: #logo" width="1" height="1" position="1 2 -5"></a-box>
-    <a-sky id="sky" color="#009DCD"></a-sky>
-    <a-obj-model src="#lego-model" material="color: #CDCC00" position="-1 1.5 -1" scale="0.01 0.01 0.01"><a-obj-model>
+    <a-sky color="#0080AF"></a-sky>
+    <a-plane exer="violini"></a-plane>
+    <a-plane exer="dellava"></a-plane>
+    <a-plane exer="dluconi"></a-plane>
+    <a-plane exer="strazzullo"></a-plane>
+    <a-plane exer="massacci"></a-plane>
+    <a-plane exer="pomili"></a-plane>
+    <a-plane exer="deluca"></a-plane>
+    <a-plane exer="focanti"></a-plane>
+    <a-plane exer="mluconi"></a-plane>
+    <a-plane exer="vesprini"></a-plane>
+    <a-plane exer="tosi"></a-plane>
+    <a-plane exer="morresi"></a-plane>
+    <a-plane exer="ceccacci"></a-plane>
+    <a-plane exer="mandolini"></a-plane>
+    <a-entity camera look-controls>
+      <a-cursor fuse="true" raycaster="objects: [exer]"></a-cursor>
+    </a-entity>
+    <a-text role="message" text="align: center; width: 20; value: Look at one of the exer" position="0 -2 -4"></a-text>
+    <a-text role="message" text="align: center; width: 20; value: Look at one of the exer" position="0 5 -4"></a-text>
+    <a-text role="message" text="align: center; width: 20; value: Look at one of the exer" position="10 1.5 -4"></a-text>
+    <a-text role="message" text="align: center; width: 20; value: Look at one of the exer" position="-10 1.5 -4"></a-text>
   </a-scene>
 </body>
 
