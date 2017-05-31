@@ -1,24 +1,22 @@
 import AFRAME from 'aframe'
 
-AFRAME.registerComponent('move-around', {
-  schema: {
-    moveX: {type: 'number', default: 0},
-    moveY: {type: 'number', default: 0},
-    moveZ: {type: 'number', default: 0}
-  },
+const START_X = -4
+const START_Y = 3
+const Z = -3
+const WIDTH = 1
+const SPACING = 0.5
+
+let index = 0
+
+AFRAME.registerComponent('exer', {
+  schema: {type: 'string'},
   init: function () {
-    this.counter = 0
-    this.originalPosition = this.el.getAttribute('position')
-  },
-  tick: function (time, timeDelta) {
-    this.counter += (0.002 * timeDelta)
+    const x = START_X + ((WIDTH + SPACING) * index)
+    this.el.setAttribute('position', {x, y: START_Y, z: Z})
+    this.el.setAttribute('width', WIDTH)
+    this.el.setAttribute('height', WIDTH)
+    this.el.setAttribute('material', {src: `#${this.data}`})
 
-    let {x, y, z} = this.originalPosition
-
-    let newX = x + this.data.moveX * Math.cos(this.counter)
-    let newY = y + this.data.moveY * Math.cos(this.counter)
-    let newZ = z + this.data.moveZ * Math.cos(this.counter)
-
-    this.el.setAttribute('position', { x: newX, y: newY, z: newZ })
+    index++
   }
 })
